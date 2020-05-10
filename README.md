@@ -1,6 +1,7 @@
 # docker-compose
 This is a docker-compose infrastructure program to solve the problem of management in our day to day life.
-# Problem:- To start any service we have to do lots of code and envirnment setup but my using docker-compose we can setup it as like when             we start our OS/container the service/application starts.
+# Problem:- 
+*To start any service we have to do lots of code and envirnment setup but my using docker-compose we can setup it as like when             we start our OS/container the service/application starts.
 # Solution:-
 *Infrastructure as a code* :- i am creating these set of codes where everything is pre-defined for your service to start.
 # steps: 
