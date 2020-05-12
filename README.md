@@ -18,4 +18,6 @@ This is a docker-compose infrastructure program to solve the problem of manageme
 
    *chmod +x /usr/local/bin/docker-compose
 
-4) make a file with Docker-compose.yml name and copy the code from my repository to this file and your job is done.
+4) make a file with Docker-compose.yml name and copy the code from my repository to this file and then process the following cmd:-
+   docker-compose up (to start the it)
+   docker-compose down (to stop it)
