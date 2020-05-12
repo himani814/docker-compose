@@ -1,28 +1,31 @@
 version: '3'
+
 services:
-  dbos:
-    image: mysql:5.7
-    command: '--default-authentication-plugin=mysql_native_password'
-    restart: always
-    volumes:
-      - mysql_storage:/var/lib/mysql
-    restart: always
-    environment:
-       MYSQL_ROOT_PASSWORD=somewordpress
-       MYSQL_DATABASE=wordpress
-       MYSQL_USER=wordpress
-       MYSQL_PASSWORD=wordpress
-  wordpress:
-    image: wordpress:5.1.1-php7.3-apache
-    ports:
-      - 80:80
-    restart: always
-    depends_on;
-       - dbos
-    environment:
-       WORDPRESS_DB_HOST=db
-       WORDPRESS_DB_USER=wordpress
-       WORDPRESS_DB_PASSWORD=wordpress
-       WORDPRESS_DB_NAME=wordpress
+        dbos:
+                image: mysql:5.7
+                volumes:
+                        - mysql_storage:/var/lib/mysql
+                restart: always
+                environment:
+                        MYSQL_ROOT_PASSWORD: rootpass
+                        MYSQL_DATABASE: wordpress
+                        MYSQL_USER: Redhat
+                        MYSQL_PASSWORD: Redhat@123
+        wordpress:
+                image: wordpress:5.1.1-php7.3-apache
+                ports:
+                        - 8080:80
+                restart: always
+                depends_on:
+                        - dbos
+                environment:
+                        WORDPRESS_DB_HOST: dbos
+                        WORDPRESS_DB_USER: Redhat
+                        WORDPRESS_DB_PASSWORD: Redhat@123
+                        WORDPRESS_DB_NAME: wordpress
+                volumes:
+                        - wp_storage:/var/www/html
+
 volumes:
-  wp_storage:/var/www/html
+    mysql_storage:    
+    wp_storage:        
